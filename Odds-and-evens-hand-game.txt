@@ -12,6 +12,12 @@ while True:
     choice = str(input('Do you want even or odd? \033[37m[E/O]\033[m').upper().strip())
     print(12 * '-=')
     pc = randint(1, 10)
+    choice2 = ''
+    if (player + pc) % 2 == 0:
+        choice2 = '\033[32meven'
+    else:
+        choice2 = '\033[31modd'
+    print(f'You play the number {player} and the computer play {pc}! The sum is {player + pc}\nand this number is {choice2}\n')
     if choice == 'E':
         if (player + pc) % 2 == 0:
             print('\033[32mCongratulations!!! You won!')
