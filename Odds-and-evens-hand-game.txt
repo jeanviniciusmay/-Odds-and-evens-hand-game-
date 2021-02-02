@@ -1,0 +1,34 @@
+from random import randint
+from time import sleep
+print(19 * '=-')
+print('Lets play Odds and evens (hand game)!')
+print(19 * '=-')
+
+gains = 0
+
+while True:
+    player = int(input(('\033[35mType a number: \033[m')))
+    print(12 * '-=')
+    choice = str(input('Do you want even or odd? \033[37m[E/O]\033[m').upper().strip())
+    print(12 * '-=')
+    pc = randint(1, 10)
+    if choice == 'E':
+        if (player + pc) % 2 == 0:
+            print('\033[32mCongratulations!!! You won!')
+            gains += 1
+        else:
+            print('\033[31mYou lost!')
+            break
+    elif choice == 'O':
+        if (player + pc) % 2 == 0:
+            print('\033[31mYou lost!')
+            break
+        else:
+            print('\033[32mYou won!')
+            gains += 1
+    else:
+        print('\033[31mWrong choice, ending...')
+        sleep(1.5)
+        break
+print(f'\n\033[mYou won \033[32m{gains}\033[m times!')
+print('\033[31m\n(Program ended)')
